@@ -1,0 +1,30 @@
+# Core MCP and FastAPI dependencies
+fastmcp==2.10.4
+fastapi==0.116.0
+uvicorn==0.35.0
+pydantic==2.11.7
+pydantic-settings==2.10.1
+python-dotenv==1.1.1
+
+# Database dependencies
+asyncpg>=0.28.0
+
+# AI and ML dependencies (CPU-only, matching main Idea Hub)
+google-generativeai>=0.8.0
+sentence-transformers>=2.2.0
+transformers>=4.21.0
+scikit-learn>=1.0.0
+
+# Vector and numeric dependencies
+numpy>=1.24.0
+
+# HTTP client dependencies
+httpx==0.28.1
+
+# Logging and utilities
+structlog==25.4.0
+
+# Additional dependencies for MCP protocol
+jsonschema>=4.20.0
+python-multipart>=0.0.9
+typing-extensions>=4.8.0

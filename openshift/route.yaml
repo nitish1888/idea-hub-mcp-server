@@ -1,0 +1,40 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    haproxy.router.openshift.io/timeout: 180s
+  labels:
+    shard: internal
+  name: idea-hub-mcp-server
+  namespace: nitsingh-dev
+spec:
+  host: idea-hub-mcp-server.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com
+  pathType: Prefix
+  to:
+    kind: Service
+    name: idea-hub-mcp-server
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  port:
+    targetPort: http
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    haproxy.router.openshift.io/timeout: 180s
+  labels:
+    shard: internal
+  name: idea-hub-mcp-server-secure
+  namespace: nitsingh-dev
+spec:
+  host: idea-hub-mcp-server-secure.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com
+  pathType: Prefix
+  to:
+    kind: Service
+    name: idea-hub-mcp-server
+  tls:
+    termination: reencrypt
+  port:
+    targetPort: https
