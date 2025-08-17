@@ -55,7 +55,7 @@ A Model Context Protocol (MCP) server for the Idea Hub AI-powered innovation pla
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone git@gitlab.cee.redhat.com:nitsingh/idea_hub_mcp_server.git
    cd idea-hub-mcp-server
    ```
 
