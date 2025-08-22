@@ -233,9 +233,7 @@ This MCP server is designed to work alongside the main Idea Hub application, pro
 ## Team
 
 - **Designed By**: Nitish Singh ([Company Rover Profile](https://rover.company.com/people/profile/nitsingh))
-- **Key Contributors**: 
-  - Rishika Kumar ([Company Rover Profile](https://rover.company.com/people/profile/rishika))
-  - Shubham Chilhate ([Company Rover Profile](https://rover.company.com/people/profile/shubham))
+
 
 ## License
 
