@@ -7,18 +7,20 @@ metadata:
     router.openshift.io/router-selector: "shard=internal"
   labels:
     shard: internal
-    app: idea-hub-mcp-server
-  name: idea-hub-mcp-server
+    app: idea-hub-updated
+    paas.redhat.com/appcode: TAAI-001
+  name: idea-hub-updated
   namespace: trend-analysis-using-ai--runtime-int
 spec:
-  host: idea-hub-mcp-server-trend-analysis-using-ai--runtime-int.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com
+  host: idea-hub-updated-trend-analysis-using-ai--runtime-int.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com
   pathType: Prefix
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
   to:
     kind: Service
-    name: idea-hub-mcp-server
+    name: idea-hub-updated
     weight: 100
   port:
-    targetPort: 8000-tcp
+    targetPort: 8080-tcp
+

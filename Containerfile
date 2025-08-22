@@ -56,8 +56,14 @@ print('📁 Model cached at:', model.cache_folder if hasattr(model, 'cache_folde
 ENV HF_HUB_OFFLINE=0
 ENV TRANSFORMERS_OFFLINE=0
 
-# Copy application code
+# Copy application code and entrypoint script
 COPY ./src ./src
+COPY ./entrypoint.sh ./entrypoint.sh
+
+# Make entrypoint script executable
+USER root
+RUN chmod +x ./entrypoint.sh
+USER default
 
 # Set virtual env path and Python path
 ENV PATH="$VENV_PATH/bin:$PATH"
@@ -66,5 +72,5 @@ ENV PYTHONPATH=/opt/app-root/src
 # Expose both MCP and Web server ports
 EXPOSE 8443 8000
 
-# Start the web server (simpler than dual mode for now)
-CMD ["/opt/app-root/src/.venv/bin/python", "src/web_server.py"]
+# Use entrypoint script (like main Idea Hub)
+CMD ["./entrypoint.sh"]

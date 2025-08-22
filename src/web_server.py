@@ -250,6 +250,23 @@ async def get_embedding_stats():
         logger.error(f"Error getting embedding stats: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+# Request model for rebuild
+class RebuildRequest(BaseModel):
+    batch_size: int = 10
+
+@app.post("/api/rebuild-embeddings")
+async def rebuild_embeddings(request: RebuildRequest):
+    """Rebuild embeddings for all ideas in the database."""
+    if not mcp_server or not mcp_server.context:
+        raise HTTPException(status_code=500, detail="MCP server not initialized")
+    
+    try:
+        result = await mcp_server.context.vector_tools.rebuild_all_embeddings(request.batch_size)
+        return result
+    except Exception as e:
+        logger.error(f"Error rebuilding embeddings: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.get("/api/health")
 async def health_check():
     """Health check endpoint."""
@@ -279,3 +296,5 @@ if __name__ == "__main__":
     print("📚 API Docs at: http://localhost:8000/docs")
     
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+

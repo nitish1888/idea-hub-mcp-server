@@ -1,0 +1,31 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    haproxy.router.openshift.io/timeout: 180s
+    haproxy.router.openshift.io/hsts_header: "max-age=31536000;includeSubDomains;preload"
+    router.openshift.io/router-selector: "shard=internal"
+  labels:
+    app: idea-hub-new
+    app.kubernetes.io/component: idea-hub-new
+    app.kubernetes.io/instance: idea-hub-new
+    app.kubernetes.io/name: idea-hub-new
+    app.kubernetes.io/part-of: idea-updated
+    app.openshift.io/runtime-version: latest
+    paas.redhat.com/appcode: TAAI-001
+    shard: internal  # Key label for internal routing
+  name: idea-hub-new
+  namespace: trend-analysis-using-ai--runtime-int
+spec:
+  host: idea-hub-new-trend-analysis-using-ai--runtime-int.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com
+  pathType: Prefix
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: idea-hub-new
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+

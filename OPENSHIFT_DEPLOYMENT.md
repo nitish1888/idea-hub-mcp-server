@@ -215,3 +215,5 @@ Once deployed, the MCP server can be integrated with your main Idea Hub applicat
 - **Secrets**: Base64 encoded values in secrets.yaml (update as needed)
 - **Routes**: Hostname patterns follow MPP requirements
 - **Resources**: Adjust CPU/memory based on usage patterns
+
+

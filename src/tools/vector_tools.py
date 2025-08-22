@@ -35,15 +35,34 @@ class VectorTools:
         self._initialize_model()
     
     def _initialize_model(self):
-        """Initialize the embedding model."""
+        """Initialize the embedding model with offline fallback."""
         try:
             if SentenceTransformer is None:
                 logger.warning("SentenceTransformer not available. Vector operations disabled.")
                 return
             
             logger.info(f"Loading embedding model: {self.config.ai.embedding_model}")
-            self.embedding_model = SentenceTransformer(self.config.ai.embedding_model)
-            logger.info("Embedding model loaded successfully")
+            
+            # Try loading with offline preference (use cache first)
+            try:
+                # Force offline mode for model loading
+                import os
+                os.environ['HF_HUB_OFFLINE'] = '1'
+                os.environ['TRANSFORMERS_OFFLINE'] = '1'
+                
+                self.embedding_model = SentenceTransformer(self.config.ai.embedding_model)
+                logger.info("Embedding model loaded successfully from cache")
+                
+            except Exception as offline_e:
+                logger.warning(f"Offline loading failed: {offline_e}")
+                logger.info("Trying online loading as fallback...")
+                
+                # Reset to allow online access for fallback
+                os.environ['HF_HUB_OFFLINE'] = '0'
+                os.environ['TRANSFORMERS_OFFLINE'] = '0'
+                
+                self.embedding_model = SentenceTransformer(self.config.ai.embedding_model)
+                logger.info("Embedding model loaded successfully from online")
             
         except Exception as e:
             logger.error(f"Failed to load embedding model: {e}")

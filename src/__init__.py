@@ -9,3 +9,5 @@ including semantic search, duplicate detection, contributor matching, and AI ana
 __version__ = "1.0.0"
 __author__ = "Nitish Singh, Rishika Kumar, Shubham Chilhate"
 __email__ = "nitsingh@redhat.com"
+
+

@@ -2,18 +2,22 @@ kind: Service
 apiVersion: v1
 metadata:
   name: idea-hub-mcp-server
-  namespace: nitsingh-dev
+  namespace: trend-analysis-using-ai--runtime-int
   annotations:
     service.beta.openshift.io/serving-cert-secret-name: idea-hub-mcp-server-tls
 spec:
   ports:
-    - name: https
-      protocol: TCP
-      port: 8443
-      targetPort: 8443
-    - name: http
+    - name: 8000-tcp
       protocol: TCP
       port: 8000
       targetPort: 8000
+    - name: 8443-tcp
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+    - name: 8080-tcp
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
   selector:
     app: idea-hub-mcp-server

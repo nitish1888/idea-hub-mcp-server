@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: idea-hub-mcp-server
-  namespace: nitsingh-dev
+  namespace: trend-analysis-using-ai--runtime-int
 spec:
   replicas: 1
   selector:
@@ -36,10 +36,11 @@ spec:
               value: '8000'
             - name: PYTHON_LOG_LEVEL
               value: 'INFO'
-            - name: MCP_SSL_KEYFILE
-              value: '/run/secrets/tls/tls.key'
-            - name: MCP_SSL_CERTFILE
-              value: '/run/secrets/tls/tls.crt'
+            # SSL disabled for now - using HTTP only
+            # - name: MCP_SSL_KEYFILE
+            #   value: '/run/secrets/tls/tls.key'
+            # - name: MCP_SSL_CERTFILE
+            #   value: '/run/secrets/tls/tls.crt'
             - name: DATABASE_HOST
               valueFrom:
                 secretKeyRef:
@@ -95,11 +96,13 @@ spec:
             limits:
               cpu: "2"
               memory: "4Gi"
-          volumeMounts:
-            - name: tls-certs
-              mountPath: /run/secrets/tls
+          # volumeMounts:
+          #   - name: tls-certs
+          #     mountPath: /run/secrets/tls
       restartPolicy: Always
-      volumes:
-        - name: tls-certs
-          secret:
-            secretName: idea-hub-mcp-server-tls
+      imagePullSecrets:
+        - name: quay-pull-secret
+      # volumes:
+      #   - name: tls-certs
+      #     secret:
+      #       secretName: idea-hub-mcp-server-tls
