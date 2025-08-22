@@ -23,7 +23,7 @@ async def run_migration():
     """Run the database migration to add vector_embedding column."""
     
     # Database connection parameters
-    host = os.getenv("DATABASE_HOST", "dbproxy01.dba-001.prod.us-east-1.aws.redhat.com")
+    host = os.getenv("DATABASE_HOST", "dbproxy01.dba-001.prod.us-east-1.aws.company.com")
     port = int(os.getenv("DATABASE_PORT", "2081"))
     database = os.getenv("DATABASE_NAME", "gss_vectordb")
     username = os.getenv("DATABASE_USER", "gss_vectordb_user")

@@ -55,7 +55,7 @@ A Model Context Protocol (MCP) server for the Idea Hub AI-powered innovation pla
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone git@gitlab.cee.redhat.com:nitsingh/idea_hub_mcp_server.git
+   git clone git@gitlab.cee.company.com:nitsingh/idea_hub_mcp_server.git
    cd idea-hub-mcp-server
    ```
 
@@ -232,14 +232,14 @@ This MCP server is designed to work alongside the main Idea Hub application, pro
 
 ## Team
 
-- **Designed By**: Nitish Singh ([Red Hat Rover Profile](https://rover.redhat.com/people/profile/nitsingh))
+- **Designed By**: Nitish Singh ([Company Rover Profile](https://rover.company.com/people/profile/nitsingh))
 - **Key Contributors**: 
-  - Rishika Kumar ([Red Hat Rover Profile](https://rover.redhat.com/people/profile/rishika))
-  - Shubham Chilhate ([Red Hat Rover Profile](https://rover.redhat.com/people/profile/shubham))
+  - Rishika Kumar ([Company Rover Profile](https://rover.company.com/people/profile/rishika))
+  - Shubham Chilhate ([Company Rover Profile](https://rover.company.com/people/profile/shubham))
 
 ## License
 
-This project is part of Red Hat's innovation initiatives and follows internal licensing guidelines.
+This project is part of Company's innovation initiatives and follows internal licensing guidelines.
 
 ## Support
 

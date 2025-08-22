@@ -6,7 +6,7 @@ This is the main entry point for the Idea Hub MCP (Model Context Protocol) serve
 It initializes and runs the MCP server with all the tools and capabilities needed
 for the AI-powered innovation platform.
 
-Based on Red Hat's dataverse-mcp-server architecture but customized for Idea Hub.
+Based on Company's dataverse-mcp-server architecture but customized for Idea Hub.
 """
 
 import asyncio

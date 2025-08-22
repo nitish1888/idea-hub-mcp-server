@@ -1,6 +1,6 @@
 # OpenShift Deployment Guide for Idea Hub MCP Server
 
-This guide explains how to deploy the Idea Hub MCP Server on Red Hat's Managed Platform Plus (MPP) following Red Hat's internal deployment patterns.
+This guide explains how to deploy the Idea Hub MCP Server on Company's Managed Platform Plus (MPP) following Company's internal deployment patterns.
 
 ## 🏗️ **Architecture Overview**
 
@@ -12,7 +12,7 @@ The deployment consists of:
 
 ## 📋 **Prerequisites**
 
-1. **Access to Red Hat OpenShift MPP**
+1. **Access to Company OpenShift MPP**
 2. **Quay.io repository access** (`quay.io/rhn-support-nitsingh/`)
 3. **Database access** (already configured)
 4. **API keys** (Google Gemini)
@@ -66,12 +66,12 @@ oc logs -f deployment/idea-hub-mcp-server
 After deployment, the service will be available at:
 
 ### **Web Interface (HTTP)**
-- **URL**: `https://idea-hub-mcp-server.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com`
-- **API Docs**: `https://idea-hub-mcp-server.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com/docs`
-- **Health Check**: `https://idea-hub-mcp-server.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com/api/health`
+- **URL**: `https://idea-hub-mcp-server.apps.int.spoke.preprod.us-east-1.aws.your-domain.com`
+- **API Docs**: `https://idea-hub-mcp-server.apps.int.spoke.preprod.us-east-1.aws.your-domain.com/docs`
+- **Health Check**: `https://idea-hub-mcp-server.apps.int.spoke.preprod.us-east-1.aws.your-domain.com/api/health`
 
 ### **MCP Server (HTTPS)**
-- **URL**: `https://idea-hub-mcp-server-secure.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com`
+- **URL**: `https://idea-hub-mcp-server-secure.apps.int.spoke.preprod.us-east-1.aws.your-domain.com`
 - **Protocol**: MCP over HTTPS
 - **Transport**: TLS-encrypted
 
@@ -82,7 +82,7 @@ All sensitive configuration is stored in Kubernetes secrets:
 
 ```yaml
 # Database Configuration
-DATABASE_HOST: dbproxy01.dba-001.prod.us-east-1.aws.redhat.com
+DATABASE_HOST: dbproxy01.dba-001.prod.us-east-1.aws.company.com
 DATABASE_PORT: 2081
 DATABASE_NAME: gss_vectordb
 DATABASE_USER: gss_vectordb_user

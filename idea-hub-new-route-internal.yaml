@@ -12,12 +12,12 @@ metadata:
     app.kubernetes.io/name: idea-hub-new
     app.kubernetes.io/part-of: idea-updated
     app.openshift.io/runtime-version: latest
-    paas.redhat.com/appcode: TAAI-001
+    paas.company.com/appcode: TAAI-001
     shard: internal  # Key label for internal routing
   name: idea-hub-new
   namespace: trend-analysis-using-ai--runtime-int
 spec:
-  host: idea-hub-new-trend-analysis-using-ai--runtime-int.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com
+  host: idea-hub-new-trend-analysis-using-ai--runtime-int.apps.int.spoke.preprod.us-east-1.aws.your-domain.com
   pathType: Prefix
   tls:
     termination: edge

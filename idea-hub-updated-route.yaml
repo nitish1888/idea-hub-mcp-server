@@ -8,11 +8,11 @@ metadata:
   labels:
     shard: internal
     app: idea-hub-updated
-    paas.redhat.com/appcode: TAAI-001
+    paas.company.com/appcode: TAAI-001
   name: idea-hub-updated
   namespace: trend-analysis-using-ai--runtime-int
 spec:
-  host: idea-hub-updated-trend-analysis-using-ai--runtime-int.apps.int.spoke.preprod.us-east-1.aws.paas.redhat.com
+  host: idea-hub-updated-trend-analysis-using-ai--runtime-int.apps.int.spoke.preprod.us-east-1.aws.your-domain.com
   pathType: Prefix
   tls:
     termination: edge
