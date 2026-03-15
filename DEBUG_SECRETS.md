@@ -92,7 +92,7 @@ secrets = {
     'DATABASE_NAME': base64.b64decode('').decode('utf-8'),
     'DATABASE_USER': base64.b64decode('').decode('utf-8'),
     'DATABASE_PASSWORD': base64.b64decode('').decode('utf-8'),
-    'GOOGLE_API_KEY': base64.b64decode('QUl6YVN5Q3ZPN2xGaEtfaU85cHRZOWROZFNLMjR4dEJzeVMtRF9jSQ==').decode('utf-8')
+    'GOOGLE_API_KEY': base64.b64decode('').decode('utf-8')
 }
 
 # Set environment variables
