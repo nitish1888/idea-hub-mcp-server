@@ -87,11 +87,11 @@ import base64
 
 # Simulate what Kubernetes does - decode the base64 values
 secrets = {
-    'DATABASE_HOST': base64.b64decode('ZGJwcm94eTAxLmRiYS0wMDEucHJvZC51cy1lYXN0LTEuYXdzLnJlZGhhdC5jb20=').decode('utf-8'),
-    'DATABASE_PORT': base64.b64decode('MjA4MQ==').decode('utf-8'),
-    'DATABASE_NAME': base64.b64decode('Z3NzX3ZlY3RvcmRi').decode('utf-8'),
-    'DATABASE_USER': base64.b64decode('Z3NzX3ZlY3RvcmRiX3VzZXI=').decode('utf-8'),
-    'DATABASE_PASSWORD': base64.b64decode('Q2s1OHp0bFZjVE9zNGg=').decode('utf-8'),
+    'DATABASE_HOST': base64.b64decode('').decode('utf-8'),
+    'DATABASE_PORT': base64.b64decode('').decode('utf-8'),
+    'DATABASE_NAME': base64.b64decode('').decode('utf-8'),
+    'DATABASE_USER': base64.b64decode('').decode('utf-8'),
+    'DATABASE_PASSWORD': base64.b64decode('').decode('utf-8'),
     'GOOGLE_API_KEY': base64.b64decode('QUl6YVN5Q3ZPN2xGaEtfaU85cHRZOWROZFNLMjR4dEJzeVMtRF9jSQ==').decode('utf-8')
 }
 
